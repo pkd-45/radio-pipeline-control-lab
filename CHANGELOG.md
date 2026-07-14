@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.4.0 — 2026-07-14
+
+- Added a containerised Redpanda and etcd integration environment.
+- Added an opt-in test that publishes and consumes a real Kafka event.
+- Added real etcd state persistence through the v3 JSON gateway.
+- Added an idempotent Kafka topic initialisation container.
+- Added a dedicated GitHub Actions job for service-backed integration tests.
+- Kept Kafka optional and verified that the ordinary package works without it.
+- Updated GitHub Actions to Node.js 24-based action releases.
+
 ## 0.3.0 — 2026-07-14
 
 - Recorded independent Linux/Slurm validation and reproduced QA metrics.
