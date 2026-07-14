@@ -1,0 +1,16 @@
+{
+  "finite_fraction": 1.0,
+  "flag_false_positive_rate": 0.009949238578680204,
+  "flag_recall": 0.76,
+  "gain_nrmse": 0.003581768531308481,
+  "image_nrmse": 0.03658923464227532,
+  "qa_passed": true,
+  "thresholds": {
+    "max_flag_false_positive_rate": 0.02,
+    "max_gain_error": 0.15,
+    "max_image_nrmse": 0.45,
+    "max_visibility_nrmse": 0.2,
+    "min_flag_recall": 0.65
+  },
+  "visibility_nrmse": 0.010652594554225233
+}

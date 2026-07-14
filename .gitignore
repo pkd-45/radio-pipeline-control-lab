@@ -1,0 +1,37 @@
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+demo-output/
+generated-slurm/
+dist/
+build/
+
+# Runtime pipeline outputs
+demo-output/
+slurm-output/
+generated-slurm/
+
+# Private cluster validation records
+validation/
+
+# Python build metadata
+*.egg-info/
+build/
+dist/
+
+# Python caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local environments
+.venv/
+venv/
+.env
+
+# macOS
+.DS_Store

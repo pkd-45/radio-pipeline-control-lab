@@ -1,0 +1,9 @@
+{
+  "finite_fraction": 1.0,
+  "flag_false_positive_rate": 0.009949238578680204,
+  "flag_recall": 0.76,
+  "gain_nrmse": 0.003581768531308481,
+  "image_nrmse": 0.03658923464227532,
+  "qa_passed": true,
+  "visibility_nrmse": 0.010652594554225233
+}

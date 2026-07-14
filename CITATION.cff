@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+title: Radio Pipeline Control Lab
+message: If this software is useful, please cite the repository release.
+type: software
+authors:
+  - family-names: Das
+    given-names: Pratyush Kumar
+version: 0.3.0
+date-released: 2026-07-14
+license: MIT
+repository-code: https://github.com/pkd-45/radio-pipeline-control-lab
