@@ -9,7 +9,6 @@ The core scientific pipeline remains runnable without Kafka or etcd.
 
 - Publish structured pipeline events to a Kafka-compatible broker.
 - Consume and inspect pipeline stage transitions.
-- Store pipeline coordination state in etcd.
 - Persist and retrieve pipeline coordination state through etcd.
 - Preserve JSONL and SQLite as local fallbacks.
 - Run integration tests against containerised services.

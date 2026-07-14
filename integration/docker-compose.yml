@@ -52,7 +52,10 @@ services:
       - -ec
     command:
       - |
-        rpk topic create radio-pipeline-events           -X brokers=redpanda:9092         || rpk topic describe radio-pipeline-events           -X brokers=redpanda:9092
+        rpk topic create radio-pipeline-events \
+          -X brokers=redpanda:9092 \
+        || rpk topic describe radio-pipeline-events \
+          -X brokers=redpanda:9092
     restart: "no"
 
   etcd:
