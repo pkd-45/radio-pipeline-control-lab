@@ -33,3 +33,55 @@ jobs:
       - run: python -m pip install --upgrade pip
       - run: python -m pip install -e '.[dev]'
       - run: mypy src
+
+  integration:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Install package with integration dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e '.[dev,kafka]'
+
+      - name: Validate Compose configuration
+        run: |
+          docker compose \
+            -f integration/docker-compose.yml \
+            config
+
+      - name: Start Kafka and etcd
+        run: |
+          docker compose \
+            -f integration/docker-compose.yml \
+            up -d --wait redpanda etcd
+
+          docker compose \
+            -f integration/docker-compose.yml \
+            run --rm topic-init
+
+      - name: Run real-service integration test
+        env:
+          RUN_SERVICE_INTEGRATION: "1"
+          KAFKA_BOOTSTRAP_SERVERS: "127.0.0.1:19092"
+          KAFKA_TOPIC: "radio-pipeline-events"
+          ETCD_ENDPOINT: "http://127.0.0.1:2379"
+        run: pytest tests/integration
+
+      - name: Show service logs after failure
+        if: failure()
+        run: |
+          docker compose \
+            -f integration/docker-compose.yml \
+            logs --no-color
+
+      - name: Remove integration services
+        if: always()
+        run: |
+          docker compose \
+            -f integration/docker-compose.yml \
+            down -v

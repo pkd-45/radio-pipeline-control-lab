@@ -33,6 +33,9 @@ where = ["src"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 addopts = "-q"
+markers = [
+  "integration: tests requiring real Kafka and etcd services",
+]
 
 [tool.ruff]
 line-length = 100
