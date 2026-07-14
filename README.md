@@ -7,7 +7,7 @@ A compact, tested portfolio project combining a **synthetic radio-interferometri
 The repository demonstrates two evidence levels:
 
 1. **Implemented and tested:** Python pipeline design, numerical validation, retries, restart/resume, product integrity checks, structured events, SQLite state, quality gates, and Slurm dependency planning.
-2. **Exploratory adapters:** small, isolated Kafka, etcd, and PyTango integrations that show a deliberate learning path without claiming production experience.
+2. **Service-validated prototype adapters:** Kafka and etcd boundaries are exercised against real containerised services, while PyTango remains an isolated exploratory integration. These demonstrate a deliberate learning path without claiming production observatory experience.
 
 This is independent portfolio software. It is **not official SKAO software**, does not use SKAO code or data, and is not presented as production-ready observatory infrastructure.
 
@@ -78,6 +78,7 @@ Around the science stages:
 - Slurm `sbatch` generation with `afterok` dependency chains.
 - Unit, integration, adapter-boundary, retry, resume, and corruption tests.
 - GitHub Actions CI across Python 3.11–3.13.
+- Containerised CI integration test using a real Kafka-compatible broker and etcd server.
 - Independently validated on a Linux Slurm cluster with Python 3.11.15.
 
 ## Reproducible demo result
@@ -142,7 +143,9 @@ The core pipeline has no Kafka, etcd, or Tango requirement. Optional adapters ar
 - `EtcdV3CoordinationStore`: writes and reads run state through the etcd v3 JSON gateway.
 - `build_tango_device`: exposes start, abort, state, and progress through a small optional PyTango device.
 
-The Kafka boundary is tested with an injected producer. The etcd boundary is tested with real HTTP requests to a local protocol stub. PyTango is kept optional because a meaningful runtime integration requires a configured Tango environment.
+Fast adapter tests use an injected Kafka producer and a local etcd protocol stub. A separate opt-in integration suite also runs the same adapters against a real containerised Redpanda broker and etcd server. PyTango is kept optional because a meaningful runtime integration requires a configured Tango environment.
+
+Run the service-backed environment and tests using the instructions in [Kafka and etcd integration lab](integration/README.md).
 
 See [Learning roadmap](docs/LEARNING_ROADMAP.md) for the production concepts intentionally not claimed here.
 
