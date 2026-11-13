@@ -2,14 +2,14 @@
 
 [![CI](https://github.com/pkd-45/radio-pipeline-control-lab/actions/workflows/ci.yml/badge.svg)](https://github.com/pkd-45/radio-pipeline-control-lab/actions/workflows/ci.yml)
 
-A compact, tested portfolio project combining a **synthetic radio-interferometric processing pipeline** with the execution-control features required to operate scientific workflows reliably on shared computing infrastructure.
+A tested reference implementation combining a **synthetic radio-interferometric processing pipeline** with execution-control features for reliable scientific workflows on shared computing infrastructure.
 
 The repository demonstrates two evidence levels:
 
 1. **Implemented and tested:** Python pipeline design, numerical validation, retries, restart/resume, product integrity checks, structured events, SQLite state, quality gates, and Slurm dependency planning.
 2. **Service-validated prototype adapters:** Kafka and etcd boundaries are exercised against real containerised services, while PyTango remains an isolated exploratory integration. These demonstrate a deliberate learning path without claiming production observatory experience.
 
-This is independent portfolio software. It is **not official SKAO software**, does not use SKAO code or data, and is not presented as production-ready observatory infrastructure.
+This is independent research software. It does not use SKAO data or code and is not production-ready observatory infrastructure.
 
 ## Why this project exists
 
@@ -152,7 +152,7 @@ See [Learning roadmap](docs/LEARNING_ROADMAP.md) for the production concepts int
 ## Documentation
 
 - [Architecture and data contracts](docs/ARCHITECTURE.md)
-- [Mapping to the software-engineering role](docs/ROLE_MAPPING.md)
+- [Engineering capabilities and scope](docs/ROLE_MAPPING.md)
 - [Testing and validation strategy](docs/TESTING.md)
 - [Learning roadmap and production limitations](docs/LEARNING_ROADMAP.md)
 - [Cluster execution guide](docs/CLUSTER_RUN.md)
