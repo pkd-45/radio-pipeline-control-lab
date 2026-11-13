@@ -1,8 +1,8 @@
-# Mapping to the Data Processing Software Engineer role
+# Engineering capabilities, evidence and scope
 
-## Immediate contribution supported by existing experience and this repository
+## Implemented capabilities and evidence
 
-| Role requirement | Evidence |
+| Capability | Implementation and evidence |
 |---|---|
 | Solid Python engineering | Installable package, typed interfaces, CLI, configuration model, tests, linting, CI, documentation |
 | Systematic unit and integration testing | Numerical unit tests; end-to-end QA test; retry, resume, corruption, Slurm, control, Kafka, and etcd boundary tests |
@@ -13,11 +13,11 @@
 | Radio data-product awareness | Synthetic visibilities, antenna gains, RFI-like corruption, calibration, uv gridding, dirty image, and PSF |
 | Reliability and traceability | Attempt history, atomic reports, checksum-verified resume, provenance manifest, explicit failure propagation |
 
-## Skills demonstrated primarily through prior work
+## Relationship to broader research workflows
 
-The portfolio project is most credible when read alongside established work in scientific Python pipelines, IFU data products, machine learning, MCMC modelling, Slurm workflows, simulation analysis, and interferometric reconstruction. The repository does not replace that record; it makes the transferable engineering practices inspectable.
+These engineering methods are relevant to scientific Python pipelines, survey data products, machine learning, MCMC modelling, Slurm workflows, simulation analysis, and interferometric reconstruction. The code is a controlled technical demonstration rather than a replacement for observational research.
 
-## Technologies being learned rather than claimed as production experience
+## Prototype technologies and production limitations
 
 - Tango device and control-system conventions.
 - Kafka delivery guarantees, partitions, consumer groups, schema evolution, and back-pressure.
