@@ -1,6 +1,6 @@
 # Contributing
 
-This repository is a compact portfolio project, but changes should follow normal engineering practice:
+Contributions should preserve numerical correctness, reproducibility, and maintainable engineering practices:
 
 1. Open an issue describing the behaviour or defect.
 2. Add or update tests with the implementation.
